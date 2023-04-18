@@ -1,0 +1,63 @@
+.list-toggle {
+    float: right;
+    margin-bottom: 20px;
+  }
+  .btn.one,
+  .btn.four {
+    background: #efefef;
+    color: #999;
+    border: 1px solid #ccc;
+    box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
+  }
+  .btn.one.on,
+  .btn.four.on {
+    background: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+  .card {
+    min-height: 265px;
+    margin-bottom: 30px;
+  }
+  
+  .card-img {
+    margin-bottom: 20px;
+  }
+  .card-img > img {
+    width: 100%;
+    height: auto;
+  }
+  .card-addr-wrap {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .card-addr-icon {
+    padding-right: 8px;
+  }
+  .card-phone-wrap {
+    margin-bottom: 10px;
+  }
+  
+  .cards-list .card {
+    min-height: auto;
+  }
+  .cards-list > div {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .cards-list .card-body {
+    display: flex;
+  }
+  .cards-list .card-img {
+    margin-bottom: 0;
+    width: 30%;
+    padding-right: 30px;
+  }
+  @media (min-width: 768px) {
+    .tel {
+      color: #000;
+      pointer-events: none;
+    }
+  }
+  

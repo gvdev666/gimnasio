@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Inicio</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+      
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <img src="https://i.pinimg.com/originals/42/9d/63/429d631659a11a9eb666b103d811470a.jpg" id="icon" alt="User Icon" />
+            <h1>Mi Gimnasio</h1>
+          </div>
+      
+          <!-- Login Form -->
+          <form>
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="Contrasena">
+            <input type="submit" class="fadeIn fourth" id="login-btn" value="Acceder">
+          </form>
+      
+         
+      
+        </div>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        const form = document.querySelector('form');
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita que se envíe el formulario automáticamente
+
+  // Obtener los valores ingresados en los campos de correo electrónico y contraseña
+  const login = document.getElementById('login').value;
+  const password = document.getElementById('password').value;
+
+  // Validar las credenciales del usuario
+  if (login === '' || password === '') {
+    alert('Por favor ingrese su correo electrónico y contraseña.');
+  } else if(login == 'admin' && password == '123') {
+    window.location.href = 'intro.html';
+  }
+});
+if (navigator.standalone == false) {
+  // El usuario no ha agregado el sitio web a la pantalla de inicio
+  const banner = document.createElement('div');
+  banner.innerHTML = '<p>Añade este sitio web a tu pantalla de inicio</p><button>Instalar</button>';
+  banner.style.cssText = 'position: fixed; bottom: 0; left: 0; right: 0; background-color: #f2f2f2; padding: 16px; z-index: 9999; text-align: center;';
+  document.body.appendChild(banner);
+
+  banner.querySelector('button').addEventListener('click', () => {
+    // Muestra la pantalla de instalación
+    const prompt = window.prompt;
+    prompt.prompt();
+    prompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('El usuario ha instalado la aplicación');
+      } else {
+        console.log('El usuario no ha instalado la aplicación');
+      }
+      banner.style.display = 'none';
+    });
+  });
+}
+
+    </script>
+  </body>
+</html>
